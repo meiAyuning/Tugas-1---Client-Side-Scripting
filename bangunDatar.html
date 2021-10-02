@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>JS Function</title>
+    </head>
+    <body>
+        <script type="text/javascript" src="bangun-datar.js"></script>
+        <script type="text/javascript" src="display.js"></script>
+        
+        <!--// let p = Number(prompt("Masukkan ukuran panjang (cm)"));
+            // let l = Number(prompt("Masukkan ukuran lebar (cm)"));
+            // let luas = luasPersegiPanjang(p,l);
+            // let keliling = kelilingPersegiPanjang(p,l);
+            // // alert(`Panjang: ${p} cm\nLebar: ${l} cm\nLuas: ${luas} cm\u00B2\nKeliling: ${keliling} cm`);
+            
+            // display(displayModeB,luas,keliling); -->
+        <script type="text/javascript">
+
+        let bangun = Number(prompt('Pilih bangun datar (1. Persegi,2.Persegi Panjang,3. Segitiga Sama Sisi,4. Trapesium Sama kaki,5. Lingkaran,6. Jajar Genjang,7. Belah Ketupat,8. Layang-layang )'))
+        
+            if (bangun == 1) {
+                let s = Number(prompt("Masukkan ukuran sisi (cm)"));
+                let luas = luasPersegi(s);
+                let keliling = kelilingPersegi(s);
+
+                display((args) => alert(`Wow!!! Luasnya ${args[0]} cm\u00B2 & kelilingnya ${args[1]} cm`),luas,keliling);
+            } else if (bangun ==2){
+                let p = Number(prompt("Masukkan ukuran panjang (cm)"));
+                let l = Number(prompt("Masukkan ukuran lebar (cm)"));
+                let luas = luasPersegiPanjang(p,l);
+                let keliling = kelilingPersegiPanjang(p,l);
+
+                display((args) => alert(`Wow!!! Luasnya ${args[0]} cm\u00B2 & kelilingnya ${args[1]} cm`),luas,keliling);
+                
+            } else if (bangun == 3){
+                let a = Number(prompt("Masukkan ukuran alas (cm)"));
+                let t = Number(prompt("Masukkan ukuran tinggi (cm)"));
+                let luas = luasSegitiga(a, t);
+                let keliling = kelilingSegitiga(a);
+
+                display((args) => alert(`Wow!!! Luasnya ${args[0]} cm\u00B2 & kelilingnya ${args[1]} cm`),luas,keliling);
+            } else if (bangun == 4){
+                let a = Number(prompt("Masukkan ukuran alas atas (cm)"));
+                let b = Number(prompt("Masukkan ukuran alas bawah (cm)"));
+                let t = Number(prompt("Masukkan ukuran tinggi (cm)"));
+                let luas = luasTrapesium(a,b,t);
+                let c = Number(prompt("Masukkan ukuran sisi miring (cm)"));
+                let keliling = kelilingTrapesium(a,b,c,c)
+
+                display((args) => alert(`Wow!!! Luasnya ${args[0]} cm\u00B2 & kelilingnya ${args[1]} cm`),luas,keliling);
+            } else if (bangun == 5){
+                let r = Number(prompt("Masukkan ukuran radius (cm)"));
+                let luas = luasLingkaran(r);
+                let keliling = kelilingLingkaran(r)
+
+                display((args) => alert(`Wow!!! Luasnya ${args[0]} cm\u00B2 & kelilingnya ${args[1]} cm`),luas,keliling);
+            } else if (bangun == 6){
+                let a = Number(prompt("Masukkan ukuran alas (cm)"));
+                let t = Number(prompt("Masukkan ukuran tinggi (cm)"))
+                let sm = Number(prompt("Masukkan ukuran sisi miring (cm)"));
+                let luas = luasJajarGenjang(a, t);
+                let keliling = kelilingJajarGenjang(a, sm);
+
+                display((args) => alert(`Wow!!! Luasnya ${args[0]} cm\u00B2 & kelilingnya ${args[1]} cm`),luas,keliling);
+            } else if (bangun == 7){
+                let d1 = Number(prompt("Masukkan ukuran diagonal 1 (cm)"));
+                let d2 = Number(prompt("Masukkan ukuran diagonal 2 (cm)"))
+                let s = Number(prompt("Masukkan ukuran sisi (cm)"));
+                let luas = luasBelahKetupat(d1,d2);
+                let keliling = kelilingBelahKetupat(s);
+
+                display((args) => alert(`Wow!!! Luasnya ${args[0]} cm\u00B2 & kelilingnya ${args[1]} cm`),luas,keliling);
+            } else if (bangun == 8){
+                let d1 = Number(prompt("Masukkan ukuran diagonal 1 (cm)"));
+                let d2 = Number(prompt("Masukkan ukuran diagonal 2 (cm)"))
+                let a = Number(prompt("Masukkan ukuran sisi miring 1(cm)"));
+                let c = Number(prompt("Masukkan ukuran sisi miring 2(cm)"));
+                let luas = luasLayang2(d1,d2);
+                let keliling = kelilingLayang2(a,c);
+
+                display((args) => alert(`Wow!!! Luasnya ${args[0]} cm\u00B2 & kelilingnya ${args[1]} cm`),luas,keliling);
+            } else {
+                alert('Silahkan Pilih Bangun Datar Yang Tersedia Terlebih Dahulu!')
+            }
+        </script>
+    </body>
+</html>
